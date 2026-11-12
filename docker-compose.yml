@@ -1,0 +1,86 @@
+version: '3.8'
+
+services:
+  # Chain A: Source EVM network (Anvil instance simulating Primary / Legacy or Hybrid Chain)
+  chain-a-anvil:
+    image: ghcr.io/foundry-rs/foundry:latest
+    container_name: evm-pqc-chain-a
+    entrypoint: ["anvil"]
+    command:
+      - "--host"
+      - "0.0.0.0"
+      - "--port"
+      - "8545"
+      - "--chain-id"
+      - "31337"
+      - "--block-time"
+      - "1"
+      - "--gas-limit"
+      - "30000000"
+    ports:
+      - "8545:8545"
+    networks:
+      pqc-bench-net:
+        ipv4_address: 172.28.0.10
+    healthcheck:
+      test: ["CMD-SHELL", "nc -z 127.0.0.1 8545 || exit 1"]
+      interval: 3s
+      timeout: 3s
+      retries: 10
+
+  # Chain B: Target EVM network (Anvil / Reth compatible instance simulating Target PQC Chain)
+  chain-b-anvil:
+    image: ghcr.io/foundry-rs/foundry:latest
+    container_name: evm-pqc-chain-b
+    entrypoint: ["anvil"]
+    command:
+      - "--host"
+      - "0.0.0.0"
+      - "--port"
+      - "8546"
+      - "--chain-id"
+      - "31338"
+      - "--block-time"
+      - "1"
+      - "--gas-limit"
+      - "30000000"
+    ports:
+      - "8546:8546"
+    networks:
+      pqc-bench-net:
+        ipv4_address: 172.28.0.20
+    healthcheck:
+      test: ["CMD-SHELL", "nc -z 127.0.0.1 8546 || exit 1"]
+      interval: 3s
+      timeout: 3s
+      retries: 10
+
+  # Cross-chain Relayer & Telemetry node for Track 2 (Khodaiemehr Relay / HTLC atomic swap)
+  track2-relayer:
+    build:
+      context: .
+      dockerfile: tracks/track2_dual_chain/Dockerfile
+    container_name: evm-pqc-track2-relayer
+    depends_on:
+      chain-a-anvil:
+        condition: service_healthy
+      chain-b-anvil:
+        condition: service_healthy
+    environment:
+      - CHAIN_A_RPC=http://chain-a-anvil:8545
+      - CHAIN_B_RPC=http://chain-b-anvil:8546
+      - RELAYER_POLL_INTERVAL=0.5
+      - PYTHONUNBUFFERED=1
+    networks:
+      pqc-bench-net:
+        ipv4_address: 172.28.0.30
+    volumes:
+      - ./results/paper2_non_composite:/app/results/paper2_non_composite
+      - ./contracts:/app/contracts
+
+networks:
+  pqc-bench-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.28.0.0/16

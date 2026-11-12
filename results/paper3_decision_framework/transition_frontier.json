@@ -1,0 +1,8 @@
+{
+  "decision_frontier": {
+    "low_throughput_single_tx": "Bindel Hybrid Concat with SegWit Stripping",
+    "medium_throughput_per_block": "Direct Falcon-512 with Calldata Compression",
+    "high_throughput_rollup_batch": "STARK/Virgo Recursive Aggregation (K >= 16)",
+    "critical_security_conservatism": "Dual Nesting Combiner (ECDSA + ML-DSA-44)"
+  }
+}

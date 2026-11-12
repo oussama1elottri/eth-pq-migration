@@ -1,0 +1,42 @@
+{
+  "table": "Table XVI: Econometric Decision Calibration",
+  "description": "Amortization crossover batch size K* above which ZK proof aggregation dominates on-chain verification",
+  "regimes": {
+    "10_gwei": {
+      "gas_price_gwei": 10.0,
+      "crossover_K_star": {
+        "Falcon512_vs_STARK": 10,
+        "MLDSA44_vs_STARK": 5,
+        "HybridFalcon_vs_STARK": 9,
+        "Falcon512_vs_Virgo": 22
+      }
+    },
+    "30_gwei": {
+      "gas_price_gwei": 30.0,
+      "crossover_K_star": {
+        "Falcon512_vs_STARK": 10,
+        "MLDSA44_vs_STARK": 5,
+        "HybridFalcon_vs_STARK": 9,
+        "Falcon512_vs_Virgo": 22
+      }
+    },
+    "60_gwei": {
+      "gas_price_gwei": 60.0,
+      "crossover_K_star": {
+        "Falcon512_vs_STARK": 10,
+        "MLDSA44_vs_STARK": 5,
+        "HybridFalcon_vs_STARK": 9,
+        "Falcon512_vs_Virgo": 22
+      }
+    },
+    "100_gwei": {
+      "gas_price_gwei": 100.0,
+      "crossover_K_star": {
+        "Falcon512_vs_STARK": 10,
+        "MLDSA44_vs_STARK": 5,
+        "HybridFalcon_vs_STARK": 9,
+        "Falcon512_vs_Virgo": 22
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+scheme,category,pubkey_bytes,sig_bytes,calldata_gas,exec_gas,total_gas,state_storage_bytes
+Baseline ECDSA (secp256k1),Baseline Classical,64,65,1040,3000,4040,20
+Baseline Falcon-512 (ZKNox),Baseline PQC,897,666,25008,84520,109528,897
+Baseline ML-DSA-44 (Fireblocks),Baseline PQC,1312,2420,59712,168400,228112,1312
+Bindel Concat (ECDSA + Falcon-512),Table XV Combiner,961,731,27072,89920,116992,917
+Bindel Weak Nested (ECDSA + Falcon-512),Table XV Combiner,961,731,27072,91320,118392,917
+Bindel Strong Nested (ECDSA + Falcon-512),Table XV Combiner,961,731,27072,92470,119542,917
+Bindel Dual Nesting (ECDSA + Falcon-512),Table XV Combiner,961,731,27072,93720,120792,917
+SegWit Stripped Witness (ECDSA + Falcon Root),Stripped / DA Witness,96,225,3600,7800,11400,52

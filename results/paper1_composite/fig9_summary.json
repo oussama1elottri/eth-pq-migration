@@ -1,0 +1,87 @@
+{
+  "experiment": "Track 1: Fig. 9 Benchmarks",
+  "num_schemes_evaluated": 8,
+  "stripping_gas_reduction_pct": 90.26,
+  "records": [
+    {
+      "scheme": "Baseline ECDSA (secp256k1)",
+      "category": "Baseline Classical",
+      "pubkey_bytes": 64,
+      "sig_bytes": 65,
+      "calldata_gas": 1040,
+      "exec_gas": 3000,
+      "total_gas": 4040,
+      "state_storage_bytes": 20
+    },
+    {
+      "scheme": "Baseline Falcon-512 (ZKNox)",
+      "category": "Baseline PQC",
+      "pubkey_bytes": 897,
+      "sig_bytes": 666,
+      "calldata_gas": 25008,
+      "exec_gas": 84520,
+      "total_gas": 109528,
+      "state_storage_bytes": 897
+    },
+    {
+      "scheme": "Baseline ML-DSA-44 (Fireblocks)",
+      "category": "Baseline PQC",
+      "pubkey_bytes": 1312,
+      "sig_bytes": 2420,
+      "calldata_gas": 59712,
+      "exec_gas": 168400,
+      "total_gas": 228112,
+      "state_storage_bytes": 1312
+    },
+    {
+      "scheme": "Bindel Concat (ECDSA + Falcon-512)",
+      "category": "Table XV Combiner",
+      "pubkey_bytes": 961,
+      "sig_bytes": 731,
+      "calldata_gas": 27072,
+      "exec_gas": 89920,
+      "total_gas": 116992,
+      "state_storage_bytes": 917
+    },
+    {
+      "scheme": "Bindel Weak Nested (ECDSA + Falcon-512)",
+      "category": "Table XV Combiner",
+      "pubkey_bytes": 961,
+      "sig_bytes": 731,
+      "calldata_gas": 27072,
+      "exec_gas": 91320,
+      "total_gas": 118392,
+      "state_storage_bytes": 917
+    },
+    {
+      "scheme": "Bindel Strong Nested (ECDSA + Falcon-512)",
+      "category": "Table XV Combiner",
+      "pubkey_bytes": 961,
+      "sig_bytes": 731,
+      "calldata_gas": 27072,
+      "exec_gas": 92470,
+      "total_gas": 119542,
+      "state_storage_bytes": 917
+    },
+    {
+      "scheme": "Bindel Dual Nesting (ECDSA + Falcon-512)",
+      "category": "Table XV Combiner",
+      "pubkey_bytes": 961,
+      "sig_bytes": 731,
+      "calldata_gas": 27072,
+      "exec_gas": 93720,
+      "total_gas": 120792,
+      "state_storage_bytes": 917
+    },
+    {
+      "scheme": "SegWit Stripped Witness (ECDSA + Falcon Root)",
+      "category": "Stripped / DA Witness",
+      "pubkey_bytes": 96,
+      "sig_bytes": 225,
+      "calldata_gas": 3600,
+      "exec_gas": 7800,
+      "total_gas": 11400,
+      "state_storage_bytes": 52
+    }
+  ]
+}

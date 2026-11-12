@@ -1,0 +1,7 @@
+committee_size,threshold,gossip_latency_ms,falcon_verify_latency_ms,falcon_relay_gas,mldsa_verify_latency_ms,mldsa_relay_gas,e2e_confirmation_falcon_sec,e2e_confirmation_mldsa_sec,htlc_settlement_latency_sec
+4,3,135.0,2.55,253560,4.26,505200,1.138,1.139,5.75
+8,6,202.5,5.1,507120,8.52,1010400,1.208,1.211,6.03
+16,11,270.0,9.35,929720,15.62,1852400,1.279,1.286,6.317
+32,22,337.5,18.7,1859440,31.24,3704800,1.356,1.369,6.625
+64,43,405.0,36.55,3634360,61.06,7241200,1.442,1.466,6.966
+128,86,472.5,73.1,7268720,122.12,14482400,1.546,1.595,7.382

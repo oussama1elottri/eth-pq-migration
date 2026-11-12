@@ -1,0 +1,79 @@
+{
+  "experiment": "Track 2: Fig. 8 Cross-Chain Relayer & Committee Benchmarks",
+  "target_relay": "KhodaiemehrRelay",
+  "swap_mechanism": "HTLCAtomicSwap",
+  "evaluations": [
+    {
+      "committee_size": 4,
+      "threshold": 3,
+      "gossip_latency_ms": 135.0,
+      "falcon_verify_latency_ms": 2.55,
+      "falcon_relay_gas": 253560,
+      "mldsa_verify_latency_ms": 4.26,
+      "mldsa_relay_gas": 505200,
+      "e2e_confirmation_falcon_sec": 1.138,
+      "e2e_confirmation_mldsa_sec": 1.139,
+      "htlc_settlement_latency_sec": 5.75
+    },
+    {
+      "committee_size": 8,
+      "threshold": 6,
+      "gossip_latency_ms": 202.5,
+      "falcon_verify_latency_ms": 5.1,
+      "falcon_relay_gas": 507120,
+      "mldsa_verify_latency_ms": 8.52,
+      "mldsa_relay_gas": 1010400,
+      "e2e_confirmation_falcon_sec": 1.208,
+      "e2e_confirmation_mldsa_sec": 1.211,
+      "htlc_settlement_latency_sec": 6.03
+    },
+    {
+      "committee_size": 16,
+      "threshold": 11,
+      "gossip_latency_ms": 270.0,
+      "falcon_verify_latency_ms": 9.35,
+      "falcon_relay_gas": 929720,
+      "mldsa_verify_latency_ms": 15.62,
+      "mldsa_relay_gas": 1852400,
+      "e2e_confirmation_falcon_sec": 1.279,
+      "e2e_confirmation_mldsa_sec": 1.286,
+      "htlc_settlement_latency_sec": 6.317
+    },
+    {
+      "committee_size": 32,
+      "threshold": 22,
+      "gossip_latency_ms": 337.5,
+      "falcon_verify_latency_ms": 18.7,
+      "falcon_relay_gas": 1859440,
+      "mldsa_verify_latency_ms": 31.24,
+      "mldsa_relay_gas": 3704800,
+      "e2e_confirmation_falcon_sec": 1.356,
+      "e2e_confirmation_mldsa_sec": 1.369,
+      "htlc_settlement_latency_sec": 6.625
+    },
+    {
+      "committee_size": 64,
+      "threshold": 43,
+      "gossip_latency_ms": 405.0,
+      "falcon_verify_latency_ms": 36.55,
+      "falcon_relay_gas": 3634360,
+      "mldsa_verify_latency_ms": 61.06,
+      "mldsa_relay_gas": 7241200,
+      "e2e_confirmation_falcon_sec": 1.442,
+      "e2e_confirmation_mldsa_sec": 1.466,
+      "htlc_settlement_latency_sec": 6.966
+    },
+    {
+      "committee_size": 128,
+      "threshold": 86,
+      "gossip_latency_ms": 472.5,
+      "falcon_verify_latency_ms": 73.1,
+      "falcon_relay_gas": 7268720,
+      "mldsa_verify_latency_ms": 122.12,
+      "mldsa_relay_gas": 14482400,
+      "e2e_confirmation_falcon_sec": 1.546,
+      "e2e_confirmation_mldsa_sec": 1.595,
+      "htlc_settlement_latency_sec": 7.382
+    }
+  ]
+}

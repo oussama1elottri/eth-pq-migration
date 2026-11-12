@@ -1,0 +1,3 @@
+mode,calldata_bytes,calldata_gas,exec_gas,total_gas,gas_reduction_pct
+Inline_Concat,1692,27072,89920,116992,0.0%
+SegWit_Stripped,225,3600,7800,11400,90.26%
